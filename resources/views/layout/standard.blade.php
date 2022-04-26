@@ -7,6 +7,9 @@
     <title>Comics-crud</title>
 </head>
 <body>
+    <header>
+        @include('partials.header')
+    </header>
     
     <main>
 

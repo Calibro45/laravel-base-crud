@@ -17,6 +17,7 @@
                 <th>Data Uscita</th>
                 <th>Tipologia</th>
                 <th>Prezzo</th>
+                <th>Pagina Fumetto</th>
             </tr>
             
             {{-- ciclo su comics --}}
@@ -38,6 +39,9 @@
                 </td>
                 <td>
                     {{ $comic->price }} €
+                </td>
+                <td>
+                    <a href="{{ route('comics.show', $comic->id) }}">Fumetto</a>
                 </td>
             </tr>    
 
