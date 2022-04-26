@@ -2,6 +2,38 @@
 
 @section('content')
 
-    {{$comic->title}}
+    <div class="container">
+        
+        <h1>{{$comic->title}}</h1>
+
+        <figure>
+            <img src="{{ $comic->thumb }}">
+        </figure>
+
+        <div>
+            <h2>Descrizione</h2>
+            <p>{{ $comic->description }}</p>
+        </div>
+
+        <div>
+            <h2>Informazioni</h2>
+
+            <ol>
+                <li>
+                    Series: {{ $comic->series }}
+                </li>
+                <li>
+                    Tipologia: {{ $comic->type }}
+                </li>
+                <li>
+                    Data di Uscita: {{ $comic->sale_date }}
+                </li>
+                <li>
+                    Prezzo: € {{ $comic->price }}
+                </li>
+            </ol>
+        </div>
+
+    </div>
 
 @endsection
