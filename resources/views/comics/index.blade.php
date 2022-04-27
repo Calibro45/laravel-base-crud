@@ -19,6 +19,7 @@
                 <th>Tipologia</th>
                 <th>Prezzo</th>
                 <th>Pagina Fumetto</th>
+                <th>Modifica</th>
             </tr>
             
             {{-- ciclo su comics --}}
@@ -46,6 +47,9 @@
                 </td>
                 <td>
                     <a href="{{ route('comics.show', $comic->id) }}">Fumetto</a>
+                </td>
+                <td>
+                    <a href="{{ route('comics.edit', $comic) }}">Modifica</a>
                 </td>
             </tr>    
 
