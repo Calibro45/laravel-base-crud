@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container-fluid">
 
-        <h1>Lista Comics</h1>
+        <h1 class="text-center text-uppercase mb-3">Lista Comics</h1>
 
         <table class="table table-hover table-dark">
             <tbody>
@@ -55,7 +55,7 @@
                             @csrf
                             @method('DELETE')
     
-                            <button type="submit">Elimina</button>
+                            <button type="submit" class="btn btn-secondary">Elimina</button>
                            
                         </form>
                     </td>

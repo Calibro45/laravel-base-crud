@@ -18,8 +18,9 @@ ol, ul {
 
 a {
     color: currentColor;
-
+    
     &:hover {
         cursor: pointer;
+        text-decoration: none;
     }
 }

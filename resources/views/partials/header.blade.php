@@ -1,7 +1,7 @@
 <header>
     <div class="container">
         <nav>
-            <ol class="d-flex align-items-center p-2">
+            <ol class="d-flex align-items-center p-2 text-uppercase">
                 <li class="pr-3">
                     <a href="{{ route('comics.index') }}">Comics</a>
                 </li>
