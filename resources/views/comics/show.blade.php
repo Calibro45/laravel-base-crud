@@ -40,6 +40,15 @@
             </button>
         </div>
 
+        <div>
+            <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                @csrf
+                @method('DELETE')
+
+                <button type="submit">Elimina</button>
+            </form>
+        </div>
+
     </div>
 
 @endsection
