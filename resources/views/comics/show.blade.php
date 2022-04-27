@@ -34,6 +34,12 @@
             </ol>
         </div>
 
+        <div>
+            <button>
+                <a href="{{ route('comics.edit', $comic) }}">modifica</a>
+            </button>
+        </div>
+
     </div>
 
 @endsection

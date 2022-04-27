@@ -20,6 +20,7 @@
                 <th>Prezzo</th>
                 <th>Pagina Fumetto</th>
                 <th>Modifica</th>
+                <th>Elimina</th>
             </tr>
             
             {{-- ciclo su comics --}}
@@ -50,6 +51,15 @@
                 </td>
                 <td>
                     <a href="{{ route('comics.edit', $comic) }}">Modifica</a>
+                </td>
+                <td>
+                    <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit">Elimina</button>
+                       
+                    </form>
                 </td>
             </tr>    
 
