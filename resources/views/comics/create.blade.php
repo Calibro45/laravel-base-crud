@@ -4,7 +4,8 @@
 
     <div class="container">
 
-        <form action="">
+        <form action="{{ route('comics.store') }}" method="POST">
+            @csrf
 
             <div>
                 <label for="title">Titolo</label>

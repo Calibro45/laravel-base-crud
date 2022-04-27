@@ -12,6 +12,7 @@
         <tbody>
 
             <tr>
+                <th>Id</th>
                 <th>Titolo</th>
                 <th>Serie</th>
                 <th>Data Uscita</th>
@@ -25,6 +26,9 @@
             @foreach ($comics as $comic)
 
             <tr>
+                <td>
+                    {{ $comic->id }}
+                </td>
                 <td>
                     {{ $comic->title }}
                 </td>
