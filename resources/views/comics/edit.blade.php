@@ -14,7 +14,8 @@
                 <label for="title" class="col-2">Titolo</label>
                 <div class="col-10">
                     <input type="text" name="title" placeholder="titolo" value="{{ $comic->title }}" 
-                    class="w-100">
+                    class="w-100 form-control
+                    @error('title') is-invalid @enderror">
 
                     {{-- * display error * --}}
                     @error('title')
@@ -29,7 +30,8 @@
                 <label for="thumb" class="col-2">Copertina</label>
                 <div class="col-10">
                     <input type="text" name="thumb" placeholder="Copertina" value="{{ $comic->thumb }}"
-                    class="w-100">
+                    class="w-100 form-control
+                    @error('thumb') is-invalid @enderror">
 
                     {{-- * display error * --}}
                     @error('thumb')
@@ -44,7 +46,8 @@
                 <label for="series" class="col-2">Serie</label>
                 <div class="col-10">
                     <input type="text" name="series" placeholder="Serie" value="{{ $comic->series }}"
-                    class="w-100">
+                    class="w-100 form-control
+                    @error('series') is-invalid @enderror">
 
                     {{-- * display error * --}}
                     @error('series')
@@ -58,7 +61,9 @@
             <div class="form-group row">
                 <label for="type" class="col-2">Tipologia</label>
                 <div class="col-10">
-                    <select name="type" id="type" class="custom-select">
+                    <select name="type" id="type" 
+                    class="custom-select form-select
+                    @error('type') is-invalid @enderror">
                         <option value="">Seleziona</option>
                         <option value="comic book" {{ ($comic->type == 'comic book') ? 'selected' : '' }}>
                             Comic Book
@@ -82,7 +87,8 @@
                 <label for="description" class="col-2">Descrizione</label>
                 <div class="col-10">
                     <textarea name="description" id="description" cols="30" rows="10" placeholder="inserisci descrizione"
-                    class="w-100">{{ $comic->description }}</textarea>
+                    class="w-100 form-control
+                    @error('description') is-invalid @enderror">{{ $comic->description }}</textarea>
 
                     {{-- * display error * --}}
                     @error('description')
@@ -96,7 +102,9 @@
             <div class="form-group row justify-content-between">
                 <div class="w-auto">
                     <label for="sale_date">Data di uscita</label>
-                    <input type="date" name="sale_date" value="{{ $comic->sale_date }}">
+                    <input type="date" name="sale_date" value="{{ $comic->sale_date }}"
+                    class="form-control 
+                    @error('sale_date') is-invalid @enderror">
 
                     {{-- * display error * --}}
                     @error('sale_date')
@@ -109,7 +117,9 @@
                 <div class="w-auto">
                     <label for="price">Prezzo €</label>
                     <input type="number" name="price" min="0" max="999.99" step=".01" 
-                    value="{{ $comic->price }}">
+                    value="{{ $comic->price }}"
+                    class="form-control 
+                    @error('price') is-invalid @enderror">
 
                     {{-- * display error * --}}
                     @error('price')
