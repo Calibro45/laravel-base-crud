@@ -15,6 +15,13 @@
                 <div class="col-10">
                     <input type="text" name="title" placeholder="titolo" value="{{ $comic->title }}" 
                     class="w-100">
+
+                    {{-- * display error * --}}
+                    @error('title')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
             </div>
             
@@ -23,6 +30,13 @@
                 <div class="col-10">
                     <input type="text" name="thumb" placeholder="Copertina" value="{{ $comic->thumb }}"
                     class="w-100">
+
+                    {{-- * display error * --}}
+                    @error('thumb')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
             </div>
 
@@ -31,6 +45,13 @@
                 <div class="col-10">
                     <input type="text" name="series" placeholder="Serie" value="{{ $comic->series }}"
                     class="w-100">
+
+                    {{-- * display error * --}}
+                    @error('series')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
             </div>
 
@@ -46,6 +67,13 @@
                             Graphic Novel
                         </option>
                     </select>
+
+                    {{-- * display error * --}}
+                    @error('type')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
             </div>
 
@@ -53,21 +81,42 @@
             <div class="form-group row">
                 <label for="description" class="col-2">Descrizione</label>
                 <div class="col-10">
-                    <textarea name="description" id="description" cols="30" rows="10" class="w-100">
-                        {{ $comic->description }}
-                    </textarea>
+                    <textarea name="description" id="description" cols="30" rows="10" placeholder="inserisci descrizione"
+                    class="w-100">{{ $comic->description }}</textarea>
+
+                    {{-- * display error * --}}
+                    @error('description')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
             </div>
 
             <div class="form-group row justify-content-between">
-                <div>
+                <div class="w-auto">
                     <label for="sale_date">Data di uscita</label>
                     <input type="date" name="sale_date" value="{{ $comic->sale_date }}">
+
+                    {{-- * display error * --}}
+                    @error('sale_date')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
 
-                <div>
+                <div class="w-auto">
                     <label for="price">Prezzo €</label>
-                    <input type="number" name="price" min="0" max="999.99" step=".01" value="{{ $comic->price }}">
+                    <input type="number" name="price" min="0" max="999.99" step=".01" 
+                    value="{{ $comic->price }}">
+
+                    {{-- * display error * --}}
+                    @error('price')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
             </div>
 

@@ -30,7 +30,7 @@
                 <div class="col-10">
                     <input type="text" name="thumb" placeholder="Copertina" value="{{ old('thumb') }}"
                     class="w-100 form-control 
-                    @error('title') is-invalid @enderror">
+                    @error('thumb') is-invalid @enderror">
 
                     {{-- * display error * --}}
                     @error('thumb')
@@ -45,7 +45,8 @@
                 <label for="series" class="col-2">Serie</label>
                 <div class="col-10">
                     <input type="text" name="series" placeholder="Serie" value="{{ old('series') }}"
-                    class="w-100 form-control">
+                    class="w-100 form-control 
+                    @error('series') is-invalid @enderror">
 
                     {{-- * display error * --}}
                     @error('series')
@@ -59,7 +60,8 @@
             <div class="form-group row">
                 <label for="type" class="col-2">Tipologia</label>
                 <div class="col-10">
-                    <select name="type" id="type" class="custom-select form-select">
+                    <select name="type" id="type" 
+                    class="custom-select form-select @error('series') is-invalid @enderror">
                         <option value="">Seleziona</option>
                         <option value="comic book" {{ old('type') == 'comic book' ? 'selected' : '' }}>
                             Comic Book
@@ -81,7 +83,7 @@
 
             <div class="form-group row">
                 <label for="description" class="col-2">Descrizione</label>
-                <div class="col-10">
+                <div class="col-10 @error('description') is-invalid @enderror">
                     <textarea name="description" id="description" rows="10" placeholder="inserisci descrizione"
                     value="{{ old('description') }}"
                     class="w-100 form-control">{{ old('description') }}</textarea>
@@ -99,7 +101,7 @@
                 <div class="w-auto">
                     <label for="sale_date">Data di uscita</label>
                     <input type="date" name="sale_date" value="{{ old('sale_date') }}"
-                    class="form-control">
+                    class="form-control @error('sale_date') is-invalid @enderror">
 
                     {{-- * display error * --}}
                     @error('description')
@@ -112,7 +114,7 @@
                 <div class="w-auto">
                     <label for="price">Prezzo €</label>
                     <input type="number" name="price" min="0" max="999.99" step=".01" value="{{ old('price') }}"
-                    class="form-control">
+                    class="form-control @error('price') is-invalid @enderror">
 
                     {{-- * display error * --}}
                     @error('price')

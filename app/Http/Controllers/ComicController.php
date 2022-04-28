@@ -104,7 +104,22 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        // todo validation 
+        // todo validation
+
+        $request->validate([
+            'title' => 'required|string|min:5|max:100',
+            'thumb' => 'required|url|string',
+            'series' => 'required|string|min:5|max:100',
+            'type' => [
+                'required',
+                'string',
+                'max:50',
+                Rule::in(['comic book', 'graphic novel']),
+            ],
+            'description' => 'required|string',
+            'sale_date' => 'required|date',
+            'price' => 'required|numeric|between:0,999.99'
+        ]);
 
         $data = $request->all();
 
