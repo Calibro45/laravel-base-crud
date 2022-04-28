@@ -41,6 +41,20 @@ class ComicController extends Controller
     {
         //@dump($request);
 
+        // todo validation
+
+        $request->validate([
+            'title' => 'required',
+            'thumb' => 'required',
+            'series' => 'required',
+            'type' => 'required',
+            'description' => 'required',
+            'sale_date' => 'required',
+            'price' => 'required'
+        ]);
+
+        //*save request form
+
         $data = $request->all();
 
         $comic = new Comic();
@@ -84,6 +98,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        // todo validation 
+
         $data = $request->all();
 
         $comic->update($data);
