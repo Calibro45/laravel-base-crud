@@ -13,7 +13,13 @@
                 <label for="title" class="col-2">Titolo</label>
                 <div class="col-10">
                     <input type="text" name="title" placeholder="titolo" 
-                    class="w-100 form-control">
+                    class="w-100 form-control @error('title') is-invalid @enderror">
+
+                    @error('title')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
             </div>
             
