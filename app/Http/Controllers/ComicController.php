@@ -54,9 +54,9 @@ class ComicController extends Controller
                 'max:50',
                 Rule::in(['comic book', 'graphic novel']),
             ],
-            'description' => 'required|string|',
+            'description' => 'required|string',
             'sale_date' => 'required|date',
-            'price' => 'required|numeric|min:0|max:999.99'
+            'price' => 'required|numeric|between:0,999.99'
         ]);
 
         //*save request form
